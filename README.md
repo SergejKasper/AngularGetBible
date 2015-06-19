@@ -3,7 +3,7 @@
 ## Fetch and display Bible verses with [AngularJS](angularjs.org)
 
 ### What?
-Use this module to select, fetch and display Bible verses using the [GetBible.net API](https://getbible.net/api). 
+Use this module to select, fetch and display Bible Verses using the [GetBible.net API](https://getbible.net/api). 
 Check out the [example](http://sergejkasper.github.io/AngularGetBible/).
 
 ### How?
@@ -22,7 +22,11 @@ Displays the Verse chosen through the navigation
 ## Credit
 This is a simple project based on the great work of [Llewellynvdm](https://github.com/Llewellynvdm) and [Mountain of Success]( http://www.mountainofsuccess.com/) on the [GetBible-Project]()
 
+## ToDo
+1) Loading-indicator 
+2) Better error-handling if connection fails. 
+
 ## Changelog
 0.0.1 Upload VerseView and Navigation and github.io example
-0.0.2 Improve Dokumentation
-0.0.3 Publish to Bower
+0.0.2 Publish to Bower
+0.0.3 Static verse example

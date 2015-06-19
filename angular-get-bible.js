@@ -24,7 +24,7 @@
 
 })(angular);
 
-angular.module('angularGetBible.directives').directive('getBibleNavigation', function($TemplateCache, GetBibleService) {
+angular.module('angularGetBible.directives').directive('getBibleNavigation', function($templateCache, GetBibleService) {
     return {
         scope: {
             showOptions: '=?shownOptions',
@@ -91,10 +91,10 @@ angular.module('angularGetBible.directives').directive('getBibleNavigation', fun
                 scope.selection['chapter_nr'] = scope.verses['chapter_nr'];
             };
         },
-        template: $TemplateCache.get('angular-get-bible/templates/Navigation.template.html')
+        template: $templateCache.get('angular-get-bible/templates/Navigation.template.html')
     };
 });
-angular.module('angularGetBible.directives').directive('getBibleViewVerses', function($TemplateCache, GetBibleService) {
+angular.module('angularGetBible.directives').directive('getBibleViewVerses', function($templateCache, GetBibleService) {
     return {
         scope: {
             verses: '=?verses',
@@ -118,7 +118,7 @@ angular.module('angularGetBible.directives').directive('getBibleViewVerses', fun
                 }
             });
         },
-        templateUrl:  $TemplateCache.get('angular-get-bible/templates/ViewVerses.template.html')
+        templateUrl:  $templateCache.get('angular-get-bible/templates/ViewVerses.template.html')
     };
 });
 angular.module('angularGetBible.services').provider('GetBibleService', function() {

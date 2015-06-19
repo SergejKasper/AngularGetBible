@@ -91,7 +91,7 @@ angular.module('angularGetBible.directives').directive('getBibleNavigation', fun
                 scope.selection['chapter_nr'] = scope.verses['chapter_nr'];
             };
         },
-        templateUrl: 'angularGetBibleNavigation.template.html'
+        templateUrl: 'angular-get-bible/templates/Navigation.template.html'
     };
 });
 angular.module('angularGetBible.directives').directive('getBibleViewVerses', function(GetBibleService) {
@@ -118,7 +118,7 @@ angular.module('angularGetBible.directives').directive('getBibleViewVerses', fun
                 }
             });
         },
-        templateUrl: 'angularGetBibleViewVerses.template.html'
+        templateUrl: 'angular-get-bible/templates/ViewVerses.template.html'
     };
 });
 angular.module('angularGetBible.services').provider('GetBibleService', function() {

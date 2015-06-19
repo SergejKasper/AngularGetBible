@@ -118,7 +118,7 @@ angular.module('angularGetBible.directives').directive('getBibleViewVerses', fun
                 }
             });
         },
-        templateUrl:  $templateCache.get('angular-get-bible/templates/ViewVerses.template.html')
+        template:  $templateCache.get('angular-get-bible/templates/ViewVerses.template.html')
     };
 });
 angular.module('angularGetBible.services').provider('GetBibleService', function() {

@@ -13,11 +13,13 @@
   // Modules
   angular.module('angularGetBible.directives', []);
   angular.module('angularGetBible.services', []);
+  angular.module('angularGetBible.templates', []);
   angular.module('angularGetBible',
       [
           'angularGetBible.config',
           'angularGetBible.directives',
           'angularGetBible.services',
+          'angularGetBible.templates',
           'ngCookies'
       ]);
 
@@ -90,37 +92,36 @@ angular.module('angularGetBible.directives').directive('getBibleNavigation', fun
                 scope.selection['chapter_nr'] = scope.verses['chapter_nr'];
             };
         },
-        templateUrl: 'navigation.getbible.template.html'
+        templateUrl: 'angularGetBibleNavigation.template.html'
     };
 });
-angular.module('angularGetBible.directives')
-    .directive('getBibleViewVerses', function(GetBibleService) {
-        return {
-            scope: {
-                verses: '=?verses',
-                verseNr: '&verse_nr',
-                chapterNr: '&chapter_nr',
-                bookName: '&book_name'
-            },
-            link: function(scope, element, attrs) {
-                scope.$watchCollection('[verses, verseNr, chapterNr, bookName]', function(newVal) {
-                    if (!scope.verses && attrs.chapterNr && !isNaN(attrs.chapterNr) && attrs.bookName) {
-                        GetBibleService.getVerses(attrs.bookName, attrs.chapterNr, 'kjv').success(function(json) {
-                            var versefilter = (attrs.verseNr) ? JSON.parse(attrs.verseNr) : Object.keys(json.chapter);
-                            scope.verses = versefilter.map(function(vNr) {
-                                return json.chapter[vNr];
-                            });
-                            scope.bookName = json['book_name'];
-                            scope.chapterNr = json['chapter_nr'];
-                        }).error(function(err) {
-                            console.log(err);
+angular.module('angularGetBible.directives').directive('getBibleViewVerses', function(GetBibleService) {
+    return {
+        scope: {
+            verses: '=?verses',
+            verseNr: '&verse_nr',
+            chapterNr: '&chapter_nr',
+            bookName: '&book_name'
+        },
+        link: function(scope, element, attrs) {
+            scope.$watchCollection('[verses, verseNr, chapterNr, bookName]', function(newVal) {
+                if (!scope.verses && attrs.chapterNr && !isNaN(attrs.chapterNr) && attrs.bookName) {
+                    GetBibleService.getVerses(attrs.bookName, attrs.chapterNr, 'kjv').success(function(json) {
+                        var versefilter = (attrs.verseNr) ? JSON.parse(attrs.verseNr) : Object.keys(json.chapter);
+                        scope.verses = versefilter.map(function(vNr) {
+                            return json.chapter[vNr];
                         });
-                    }
-                });
-            },
-            templateUrl: 'verse.getbible.template.html'
-        };
-    });
+                        scope.bookName = json['book_name'];
+                        scope.chapterNr = json['chapter_nr'];
+                    }).error(function(err) {
+                        console.log(err);
+                    });
+                }
+            });
+        },
+        templateUrl: 'angularGetBibleViewVerses.template.html'
+    };
+});
 angular.module('angularGetBible.services').provider('GetBibleService', function() {
     function GetBibleService($http) {
         this.getVerse = function getVerse(book, chapter, verse, version) {

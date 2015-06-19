@@ -10,7 +10,7 @@
           debug: true
       });
 
-  // Modules
+  // Modules TODO:,'ngCookies' save books for version
   angular.module('angularGetBible.directives', []);
   angular.module('angularGetBible.services', []);
   angular.module('angularGetBible.templates', []);
@@ -19,8 +19,7 @@
           'angularGetBible.config',
           'angularGetBible.directives',
           'angularGetBible.services',
-          'angularGetBible.templates',
-          'ngCookies'
+          'angularGetBible.templates'
       ]);
 
 })(angular);

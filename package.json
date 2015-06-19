@@ -5,6 +5,10 @@
     "name": "Sergej Kasper",
     "email": "sergejkasper@gmail.com"
   },
+  "main": [
+    "dist/angular-get-bible.js",
+    "dist/angular-get-bible.templates.js"
+  ],
   "dependencies": {},
   "devDependencies": {
     "chai": "^1.9.1",

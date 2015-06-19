@@ -17,11 +17,17 @@
             <h1> Welcome to <a href="https://github.com/SergejKasper/AngularGetBible">AngularGetBible!</a>  </h1>
             <p class="lead">Select your most beloved verse of the Bible and watch the Scripture arrive from <a href="https://getbible.net/api">GetBible</a>.</p>
         </div>
-        <div class="well">
-            <p>Choose a Book, then a Chapter, then a Verse... and see the result:</p>
-            <div get-bible-navigation selection="scripture"></div>
-            <hr>
-            <div get-bible-view-verses verses="scripture.verses" chapter_nr="scripture.chapter_nr" book_name="scripture.book_name"></div>
+        <div class="row">
+            <div class="col-sm-9" class="well">
+                <p>Choose a Book, then a Chapter, then a Verse... and see the result:</p>
+                <div get-bible-navigation selection="scripture"></div>
+                <hr>
+                <div get-bible-view-verses verses="scripture.verses" chapter_nr="scripture.chapter_nr" book_name="scripture.book_name"></div>
+            </div>
+            <div class="col-sm-3" class="well">
+                <p>This is a static verse</p>
+                <div get-bible-view-verses verse_nr='[16]' chapter_nr='3' book_name='"John"'></div>
+            </div>
         </div>
     </div>
 

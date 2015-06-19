@@ -24,3 +24,5 @@ This is a simple project based on the great work of [Llewellynvdm](https://githu
 
 ## Changelog
 0.0.1 Upload VerseView and Navigation and github.io example
+0.0.2 Improve Dokumentation
+0.0.3 Publish to Bower

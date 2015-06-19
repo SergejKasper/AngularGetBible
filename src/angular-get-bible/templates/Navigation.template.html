@@ -1,0 +1,8 @@
+<form class="form-inline">
+    <button ng-repeat=" book in books track by book.book_nr" class="btn btn-xs btn-default" ng-click="selectBook(book)" ng-class="{active: (selectedBook === book)}">{{book.book_name}}</button>
+    <br><br>
+    <!-- select ng-options="book.book_name for book in books track by book.book_nr"  class="form-control" ng-model="selectedBook"></select -->
+    <button ng-repeat="chapter in chapters track by chapter"  class="btn btn-xs btn-default" ng-click="selectChapter(chapter)" ng-class="{active: (selectedChapter === chapter)}">{{chapter}}</button>
+    <br><br>
+    <button ng-repeat="verse in verseNrs track by verse" class="btn btn-xs btn-default"  ng-click="selectVerses(verse)"  ng-class="{active: (selectedVerses.indexOf(verse) != -1)}">{{verse}}</button>
+</form>

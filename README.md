@@ -17,3 +17,5 @@ Displays the Verse chosen through the navigation
 
 ## Credit
 This is a simple project based on the great work of [Llewellynvdm](https://github.com/Llewellynvdm) and [Mountain of Success]( http://www.mountainofsuccess.com/) on the [GetBible-Project]()
+
+## Versions

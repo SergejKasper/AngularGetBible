@@ -1,4 +1,4 @@
-angular.module('angularGetBible.directives').directive('getBibleNavigation', function(GetBibleService) {
+angular.module('angularGetBible.directives').directive('getBibleNavigation', function($templateCache, GetBibleService) {
     return {
         scope: {
             showOptions: '=?shownOptions',
@@ -65,6 +65,6 @@ angular.module('angularGetBible.directives').directive('getBibleNavigation', fun
                 scope.selection['chapter_nr'] = scope.verses['chapter_nr'];
             };
         },
-        templateUrl: 'navigation.getbible.template.html'
+        template: $templateCache.get('angular-get-bible/templates/Navigation.template.html')
     };
 });

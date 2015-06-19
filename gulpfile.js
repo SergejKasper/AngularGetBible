@@ -7,8 +7,10 @@ var path = require('path');
 var plumber = require('gulp-plumber');
 var runSequence = require('run-sequence');
 var jshint = require('gulp-jshint');
+var ghPages = require('gulp-gh-pages');
+var angularTemplates = require('gulp-angular-templates'); 
 
-/**
+/*
  * File patterns
  **/
 
@@ -17,6 +19,17 @@ var rootDirectory = path.resolve('./');
 
 // Source directory for build process
 var sourceDirectory = path.join(rootDirectory, './src');
+
+gulp.task('templates', function () {
+    return gulp.src(path.join(sourceDirectory, '/**/*.html'))
+        .pipe(angularTemplates({module: 'angularGetBible.templates'}))
+        .pipe(plumber())
+        .pipe(concat('angular-get-bible.templates.js'))
+        .pipe(gulp.dest('./dist/'))
+        .pipe(uglify())
+        .pipe(rename('angular-get-bible.templates.min.js'))
+        .pipe(gulp.dest('./dist'));
+});
 
 var sourceFiles = [
 
@@ -47,7 +60,7 @@ gulp.task('build', function() {
  * Process
  */
 gulp.task('process-all', function (done) {
-  runSequence('jshint', 'test-src', 'build', done);
+  runSequence('jshint', 'test-src','templates', 'build', done);
 });
 
 /**
@@ -98,6 +111,11 @@ gulp.task('test-dist-minified', function (done) {
     configFile: __dirname + '/karma-dist-minified.conf.js',
     singleRun: true
   }, done);
+});
+
+gulp.task('deploy', function() {
+  return gulp.src(['./dist/**/*', path.join(rootDirectory + '/index.html')])
+    .pipe(ghPages());
 });
 
 gulp.task('default', function () {

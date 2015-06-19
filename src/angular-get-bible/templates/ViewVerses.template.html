@@ -1,0 +1,8 @@
+   <center><b>{{book_name}} {{chapter_nr}}</b></center>
+   <p class='{{scripture.direction.toLowerCase()}}'>
+     <div ng-repeat='verse in verses track by $id(verse)'>
+       <small class='ltr'>{{verse.verse_nr  |  number : 0}}</small>
+       {{verse.verse}}
+     </div>
+     <br>
+   </p>

@@ -1,6 +1,6 @@
 # Angular GetBible
 
-## Fetch and display Bible verses with [AngularJS](angularjs.org)
+## Fetch and display Bible verses with [AngularJS](http://angularjs.org)
 
 ### What?
 Use this module to select, fetch and display Bible Verses using the [GetBible.net API](https://getbible.net/api). 

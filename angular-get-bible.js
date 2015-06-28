@@ -103,7 +103,7 @@ angular.module('angularGetBible.directives').directive('getBibleViewVerses', fun
             bookName: '&book_name'
         },
         link: function(scope, element, attrs) {
-            scope.$watchCollection('[verses, verseNr, chapterNr, bookName]', function(newVal) {
+            var watcher =  function(newVal) {
                 if (!scope.verses && attrs.chapterNr && !isNaN(attrs.chapterNr) && attrs.bookName) {
                     GetBibleService.getVerses(attrs.bookName, attrs.chapterNr, 'kjv').success(function(json) {
                         var versefilter = (attrs.verseNr) ? JSON.parse(attrs.verseNr) : Object.keys(json.chapter);
@@ -116,7 +116,10 @@ angular.module('angularGetBible.directives').directive('getBibleViewVerses', fun
                         console.log(err);
                     });
                 }
-            });
+            };
+            scope.$watch(function () {
+              return [scope.verses, attrs.versesNr, attrs.chapterNr, attrs.bookName];
+            }, watcher, true);
         },
         template:  $templateCache.get('angular-get-bible/templates/ViewVerses.template.html')
     };

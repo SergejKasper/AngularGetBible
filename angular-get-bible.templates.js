@@ -4,7 +4,7 @@ angular.module('angularGetBible.templates').run(['$templateCache', function($tem
 }]);
 angular.module('angularGetBible.templates').run(['$templateCache', function($templateCache) {
     $templateCache.put('angular-get-bible/templates/VerseLinkView.template.html',
-        "<div ng-transclude></div>\n<div class='get-bible-verse-link-view' ng-show='showing' style='right: 0; width: 100%; max-width: 300px; height: 100%; padding-top: 10px; position: absolute; display: block; top: 0; background-color: rgba(225, 225, 225, .7);'>\n\t<button ng-click='showing = false'>Hide</button>\n\t<blockquote> \n\t\t<div use-api get-bible-view-verses verse_nr='{{verse_nr}}' chapter_nr='{{chapter}}' book_name='{{book}}'></div>\n\t</blockquote>\n</div>");
+        "<div ng-transclude></div>\n<div class='get-bible-verse-link-view' ng-show='showing' style='position: absolute; width: 100%; display: flex; padding: 10px 30px;'>\n\t<button ng-click='showing = false'>Hide</button> \n\t\t<div style=\"background-color: rgba(225, 225, 225, .7);\" use-api get-bible-view-verses verse_nr='{{verse_nr}}' chapter_nr='{{chapter}}' book_name='{{book}}'></div>\n</div>");
 }]);
 angular.module('angularGetBible.templates').run(['$templateCache', function($templateCache) {
     $templateCache.put('angular-get-bible/templates/ViewVerses.template.html',

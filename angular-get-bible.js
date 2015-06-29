@@ -105,7 +105,7 @@ angular.module('angularGetBible.directives').directive('getBibleViewVerses', fun
         },
         link: function(scope, element, attrs) {
             var watcher =  function(newVal) {
-                if (!attrs.isStatic && attrs.chapterNr && !isNaN(attrs.chapterNr) && attrs.bookName) {
+                if (attrs.isStatic && attrs.chapterNr && !isNaN(attrs.chapterNr) && attrs.bookName) {
                     GetBibleService.getVerses(attrs.bookName, attrs.chapterNr, 'kjv').success(function(json) {
                         var versefilter = (attrs.verseNr) ? JSON.parse(attrs.verseNr) : Object.keys(json.chapter);
                         scope.verses = versefilter.map(function(vNr) {

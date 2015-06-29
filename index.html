@@ -25,8 +25,8 @@
                 <div get-bible-view-verses verses="scripture.verses" chapter_nr="scripture.chapter_nr" book_name="scripture.book_name"></div>
             </div>
             <div class="pull-right col-sm-3 well">
-                <p>This is a static verse</p>
-                <div get-bible-view-verses is-static verse_nr='[16]' chapter_nr='3' book_name='"John"'></div>
+                <p>This is an Api-Verse. <br/> It is fetching it's data from the Api and not displaying verses bound with the "verses" attribute</p>
+                <div get-bible-view-verses use-api verse_nr='[16]' chapter_nr='3' book_name='"John"'></div>
             </div>
         </div>
     </div>

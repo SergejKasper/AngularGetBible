@@ -26,12 +26,14 @@ Fetches Verses, Chapters and Books from a GetBible API. Since GetBible is a [Com
 
 
 ##### GetBibleNavigation Directive
-Displays a Navigation to choose book, chapter and verse of Scripture to display (while fetching those from an API)
+Displays a Navigation to choose book, chapter and verse(s) of Scripture to display (while fetching those from an API)
 
 
 ##### GetBibleVerseView Directive
-Displays the Verse chosen through the navigation
+Display Verse(s) chosen and loaded through the navigation within the text. Or use the "use-api"-Attribute and pass a book, chapter and verse directly into the directive to load and display a verse without needing to recieve a model from the navigation.
 
+##### GetBibleVerseLink & GetBibleVerseLinkView Directives
+Insert verses as links, which are loaded and shown in an overlay, when clicking on the verse.
 
 ## Credit
 This is a simple project based on the great work of [Llewellynvdm](https://github.com/Llewellynvdm) and [Mountain of Success]( http://www.mountainofsuccess.com/) on the [GetBible-Project]()
@@ -51,4 +53,6 @@ This is a simple project based on the great work of [Llewellynvdm](https://githu
 
 0.0.2 Publish to Bower
 
-0.0.3 Static verse example
+0.0.3 Self-Contained verses (select via navigation needed)
+
+0.0.4 Insert verses as links and show them in an overlay

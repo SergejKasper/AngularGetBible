@@ -1,0 +1,5 @@
+<div ng-transclude></div>
+<div class='get-bible-verse-link-view' ng-show='showing'>
+	<button ng-click='showing = false'>Hide</button> 
+		<div class="get-bible-verse-link-overlay" use-api get-bible-view-verses verse_nr='{{verse_nr}}' chapter_nr='{{chapter}}' book_name='{{book}}'></div>
+</div>

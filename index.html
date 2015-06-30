@@ -22,18 +22,19 @@
                 <p>Choose a Book, then a Chapter, then a Verse... and see the result:</p>
                 <div get-bible-navigation selection="scripture"></div>
                 <hr>
+                <div ng-show="scripture.verses">This is displaying "scripture.verses" as fetched by get-bible-navigation: </div>
                 <div get-bible-view-verses verses="scripture.verses" chapter_nr="scripture.chapter_nr" book_name="scripture.book_name"></div>
             </div>
-            <div class="pull-right col-sm-3 well">
+            <div class="pull-right col-sm-4 well">
                 <div class="col-xs-12">
-                    <p>This is an Api-Verse. <br/> It is fetching it's data from the Api and not displaying verses bound with the "verses" attribute</p>
+                    <p>This is an Api-Verse. <br/> It is fetching it's data from the Api itself:</p>
                     <blockquote>
                         <div get-bible-view-verses use-api verse_nr='[16]' chapter_nr='3' book_name='"John"'></div>
                     </blockquote>
                 </div>
             </div>
-            <div class="col-xs-12">
-                <get-bible-verse-link-view style="position: absolute; width: 100%; height: 300px; ">
+            <div class="col-xs-12 well">
+                <get-bible-verse-link-view style="display: flex;">
                 <p>The golden chain of redemption is <a class="get-bible-verse-link" href="?vNrs=[28,29,30]&chNr=8&b=Romans">Romans 8:28 - 30</a>.</p>
                 </get-bible-verse-link-view>
             </div>

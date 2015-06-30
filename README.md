@@ -49,10 +49,10 @@ This is a simple project based on the great work of [Llewellynvdm](https://githu
 
 ## Changelog
 
-0.0.1 Upload VerseView and Navigation and github.io example
+0.1 Upload VerseView and Navigation and github.io example
 
-0.0.2 Publish to Bower
+0.2 Publish to Bower
 
-0.0.3 Self-Contained verses (select via navigation needed)
+0.3 Self-Contained verses (select via navigation needed)
 
-0.0.4 Insert verses as links and show them in an overlay
+0.4 Insert verses as links and show them in an overlay
